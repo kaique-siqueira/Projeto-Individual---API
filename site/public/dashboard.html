@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="layout.css" media="screen"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap" rel="stylesheet">
+    <link rel="icon" type="imagem/png" href="KS-ICON.png" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="header">
+
+        <div class="container">
+           <a href="home.html"><img src="TS-Icon-Red.png" class="img"></a>
+
+        </div>
+
+        <div class="containerII">
+
+            <ul class="navbar">
+               <i><li>Login</li></i> &nbsp; <span class="bar">|</span>
+               <i><li>Cadastro</li></i>
+            </ul>
+
+        </div>
+        
+    </div>
+
+    
+
+
+ <!-- FIM DA HEADER -->
+
+
+    <div class="banner_dash">
+      <!--
+        <div class="coluna">
+            <p class="options">Olá!</p>
+            <p class="optionsII">Escolha uma das das opções</p>
+
+
+            <button class="btn_dash" onclick="melhor_album()">Melhor Álbum</button>
+
+            <button class="btn_dash" onclick="melhor_musica()">Melhor Música</button>
+    </div>
+-->
+    <!-- GRAFICO -->
+
+    <div class="chart">
+
+      <div class="chartI">
+          <canvas  id="myChart" style="height: 210px; width: 721px;"></canvas>
+      </div>
+    
+
+      <div class="chartII">
+        <canvas  id="myChartII" style="height: 210px; width: 721px;"></canvas>
+      </div>
+    </div>
+    
+</div>
+
+
+
+    <div class="footer"></div>
+
+</body>
+</html>
+
+<script>
+
+    const labels = [
+      '1ª semana',
+      '2ª semana',
+      '3ª semana',
+      '4ª semana',
+      '5ª semana',
+    ];
+  
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'Red TV', 
+        backgroundColor: 'rgb(168 35 28)',
+        borderColor: 'rgb(168 35 28)',
+        data: [20, 10, 5, 2, 20, 30],
+      },
+      {
+        label: 'Fearless', 
+        backgroundColor: 'rgb(142 104 54)',
+        borderColor: 'rgb(142 104 54)',
+        data: [10, 10, 5, 2, 20, 30],
+      },
+      {
+        label: 'evermore', 
+        backgroundColor: 'rgb(227 121 56)',
+        borderColor: 'rgb(227 121 56)',
+        data: [5, 10, 5, 2, 20, 30],
+      },
+      {
+        label: 'folklore', 
+        backgroundColor: 'rgb(76 76 76)',
+        borderColor: 'rgb(76 76 76)',
+        data: [5, 10, 5, 2, 20, 30],
+        
+      }] };
+
+      const dataII = {
+      labels: labels,
+      datasets: [{
+        label: 'All Too Well', 
+        backgroundColor: 'rgb(168 35 28)',
+        borderColor: 'rgb(168 35 28)',
+        data: [50, 10, 5, 2, 20, 30],
+      },
+      {
+        label: 'Love Story', 
+        backgroundColor: 'rgb(142 104 54)',
+        borderColor: 'rgb(142 104 54)',
+        data: [10, 10, 5, 2, 20, 30],
+      },
+      {
+        label: 'willow', 
+        backgroundColor: 'rgb(227 121 56)',
+        borderColor: 'rgb(227 121 56)',
+        data: [5, 10, 5, 2, 20, 30],
+      },
+      {
+        label: 'cardigan', 
+        backgroundColor: 'rgb(76 76 76)',
+        borderColor: 'rgb(76 76 76)',
+        data: [5, 10, 5, 2, 20, 30],
+        
+      }] };
+  
+    const config = {
+      type: 'bar',
+      data: data,
+      options: {}
+    };
+
+    const configII = {
+      type: 'bar',
+      data: dataII,
+      options: {}
+    };
+  </script>
+
+  <script>
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+
+    const myChartII = new Chart(
+      document.getElementById('myChartII'),
+      configII
+    );
+  </script>
+
+
+
+
+<script>
+   function melhor_musica() {
+    document.getElementById('chart_mm').style.display = 'block';
+        document.getElementById('chart_ma').style.display =  'none';
+   }
+
+   function melhor_album() {
+    document.getElementById('chart_ma').style.display = 'block';
+        document.getElementById('chart_mm').style.display =  'none';
+    
+   }
+</script>

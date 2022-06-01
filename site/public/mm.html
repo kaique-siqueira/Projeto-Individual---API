@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TS Collection</title>
+    <link rel="stylesheet" type="text/css" href="layout.css" media="screen"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap" rel="stylesheet">
+    <link rel="icon" type="imagem/png" href="../public/capas/KS-ICON.png" />
+
+</head>
+<body>
+    <div class="header">
+
+        <div class="container">
+           <a href="home_second.html"><img src="TS-Icon-Red.png" class="img"></a>
+
+        </div>
+
+        <div class="containerII">
+
+            <ul class="navbarII">
+                <a href="ma.html"><i><li style="color: white;">Melhor Album</li></i></a> &nbsp; 
+              <a href="mm.html"><i><li style="color: white;">Melhor Música</li></i></a> 
+            </ul>
+
+        </div>
+        
+    </div>
+
+    <div class="container_MM">
+        <div class="tit_ma"><p class="p_mm">MELHOR MÚSICA</p></div>
+        
+
+
+
+        <div class="blocos">
+
+            <div class="squareI">
+
+                <p class="p_msc">All Too Well</p>
+                <iframe class="player" style="border-radius:12px" src="https://open.spotify.com/embed/track/5enxwA8aAbwZbf5qCHORXi?utm_source=generator" width="250" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                <button class="button_mm" onclick="votar_atw()">Votar</button>
+            </div>
+
+
+
+            <div class="squareI">
+                <p class="p_msc">Love Story</p>
+                <iframe class="player" style="border-radius:12px" src="https://open.spotify.com/embed/track/6YvqWjhGD8mB5QXcbcUKtx?utm_source=generator&theme=0" width="250" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                <button class="button_mm" onclick="votar_ls()">Votar</button>
+
+            </div>
+
+            <div class="squareI">
+                <p class="p_msc">willow</p>
+                <iframe class="player" style="border-radius:12px" src="https://open.spotify.com/embed/track/2gVhfX2Gy1T9kDuS9azrF7?utm_source=generator" width="250" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                <button class="button_mm" onclick="votar_willow()">Votar</button>
+            </div>
+            <div class="squareI">
+                <p class="p_msc">cardigan</p>
+                <iframe class="player" style="border-radius:12px" src="https://open.spotify.com/embed/track/0KRYCBwIpWYFNrXOmXbyUh?utm_source=generator" width="250" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                <button class="button_mm" onclick="votar_cardigan()">Votar</button>
+
+            </div>
+
+
+
+        </div>
+        <button class="ma_votos">Enviar Votos</button>
+    </div>
+
+    <div class="footer"></div>
+
+</body>
+</html>
+
+<script>
+    var atw = 0
+    var ls = 0
+    var willow = 0
+    var cardigan = 0
+
+    function votar_atw() {
+       
+       atw++
+    }
+
+    function votar_ls() {
+        ls++ 
+        
+    }
+
+    function votar_willow() {
+        willow++ 
+        
+    }
+
+    function votar_cardigan() {
+        cardigan++ 
+       
+    }
+</script>

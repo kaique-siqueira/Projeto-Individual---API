@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TS Collection</title>
+    <link rel="stylesheet" type="text/css" href="layout.css" media="screen"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap" rel="stylesheet">
+    <link rel="icon" type="imagem/png" href="../public/capas/KS-ICON.png" />
+
+</head>
+<body>
+    <div class="header">
+
+        <div class="container">
+            <a href="home_second.html"><img src="TS-Icon-Red.png" class="img"></a>
+
+        </div>
+
+        <div class="containerII">
+
+            <ul class="navbarII">
+                <a href="ma.html"><i><li style="color: white;">Melhor Album</li></i></a> &nbsp; 
+              <a href="mm.html"><i><li style="color: white;">Melhor Música</li></i></a> 
+            </ul>
+
+        </div>
+        
+    </div>
+
+    <!-- FIM DA HEADER -->
+
+    <!-- INICIO BODY   -->
+
+    <div class="container_MA">
+            <div class="tit_ma"><p class="p_ma">MELHOR ÁLBUM</p></div>
+
+    <div class="blocos">
+
+        <div class="blocoI">
+            <p class="p_red">Red (Taylor's Version)</p> <br>
+            <iframe class="playI" style="border-radius:12px" src="https://open.spotify.com/embed/album/6kZ42qRrzov54LcAk4onW9?utm_source=generator" width="250" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe> <br>
+
+           <button class="button_ma" onclick="votar_red()">Votar</button>
+
+        </div>
+
+        <div class="blocoII">
+            <p class="p_red">Fearless (Taylor's Version)</p> <br>
+            <iframe class="playI" style="border-radius:12px" src="https://open.spotify.com/embed/album/4hDok0OAJd57SGIT8xuWJH?utm_source=generator" width="250" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+             <br>
+
+           <button class="button_ma" onclick="votar_fearless()">Votar</button>
+        </div>
+
+        <div class="blocoIII">
+            <p class="p_red">evermore</p> <br>
+            <iframe class="playI" style="border-radius:12px" src="https://open.spotify.com/embed/album/6AORtDjduMM3bupSWzbTSG?utm_source=generator" width="250" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+         <button class="button_ma" onclick="votar_ever()">Votar</button>
+
+        </div>
+
+        <div class="blocoIV">
+            <p class="p_red">folklore</p> <br>
+            <iframe class="playI" style="border-radius:12px" src="https://open.spotify.com/embed/album/1pzvBxYgT6OVwJLtHkrdQK?utm_source=generator" width="250" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          > <button class="button_ma" onclick="votar_folk()">Votar</button>
+
+        </div>
+    </div>
+            <button onclick="enviar_ma()" class="ma_votos">Enviar Votos</button>
+            </div>
+    <!--  FIM BODY -->
+    
+    <!-- FOOTHER -->
+    <div class="footer" id="barra">
+
+        <input type="text" id="in_voto">
+        
+    </div>
+</body>
+</html>
+
+<script>
+
+    var voto = []
+
+    function votar_red() {
+       voto.push("red")
+    }
+
+    function votar_fearless() {
+        voto.push("fearless")
+    }
+
+    function votar_ever() {
+        voto.push("evermore")
+        
+    }
+
+    function votar_folk() {
+        voto.push("folklore")
+       
+    }
+
+    function enviar_ma() {
+
+        if (voto.length >= 2) {
+            alert(`Apenas um voto por usuário`)
+            pop(voto)
+            return
+        }
+        else {
+           
+            fetch("/usuarios/enviar_ma", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                votoServer: voto,
+            })
+        })
+           
+    }
+
+}
+    
+</script>

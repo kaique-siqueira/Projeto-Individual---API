@@ -1,0 +1,564 @@
+body {
+margin: 0px;
+}
+
+.bar {
+    font-family:Arial, Helvetica, sans-serif;
+}
+.header {
+font-size: large;
+font-family: 'IM Fell DW Pica', serif;
+width: 100%;
+height: 80px;
+background-color: #be9f88;
+display: flex;
+}
+
+
+.header .container {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 20%;
+    margin-left: 545px;
+    display: flex;
+}
+
+.containerII {
+    height: auto;
+    width: 118px;
+    justify-content: flex-end;
+    margin-left: 400px;
+    margin-right: 2%;
+}
+
+.navbar {
+    padding: 0%;
+    margin-bottom: 0%;
+    color: white;
+    list-style: none;
+    align-items: center;
+    display: flex;
+    padding-left: 5;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 30px;
+}
+
+.navbarII {
+    padding: 0%;
+    margin-bottom: 0%;
+    color: white;
+    list-style: none;
+    display: flex;
+}
+
+.img {
+    height: 70px;
+}
+
+/* FIM DA HEADER */
+
+/* INICIO DO BANNER */
+
+.aviso {
+    position: relative;
+    width: 225px;
+    height: fit-content;
+    background-color: white;
+    display: flex;
+    float: right;
+    margin-top: 45px;
+    margin-right: 142px;
+    display: none;
+    
+}
+
+#p_aviso {
+    color:#a8231c;
+    font-weight: 900;
+    font-size: larger;
+    margin-top: 35px;
+    text-align: center;
+    
+}
+
+.banner {
+    width: 100%;
+    height: 460px;
+    background-image: url(../capas/Taylor-Inicio.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.x {
+    font-family: 'IM Fell DW Pica', serif;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 30px;
+    float: right;
+    padding-top: 9px;
+    padding-right: 14px;
+    color: white;
+}
+
+.popup {
+    font-family: 'IM Fell DW Pica', serif;
+    background-color: #9c1c15b2;
+    width: 390px;
+    height: 450px;
+    position: absolute;
+    margin-bottom: 919px;
+    display: none;
+    border-radius: 30px;
+}   
+
+.captcha {
+    margin-left: 112px;
+    margin-top: 42px;
+    background-color: rgba(255, 255, 255, 0);
+    height: 50px;
+    width: 390px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;   
+}
+
+.in_cap {
+    text-align: center;
+    height: 25px;
+    width: 84px;
+    padding-right: 1px;
+    border: white solid;
+    border-radius: 19px;
+}
+
+.valores {
+    color: white;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 8px;
+}
+
+.popupII {
+    font-family: 'IM Fell DW Pica', serif;
+    background-color: #9c1c15b2;
+    width: 390px;
+    height: 615px;
+    position: absolute;
+    margin-bottom: 919px;
+    display: none;
+    border-radius: 30px;
+}
+
+.p_login {
+    text-align: center;
+    margin-left: 15px;
+    margin-top: 50px;
+    font-size:x-large;
+}
+
+.p_cad{
+    text-align: center;
+    margin-top: 44px;
+    margin-left: 15px;
+    font-size:x-large;
+}
+
+.p_email {
+    font-size: x-large;
+    text-align: center;
+    margin-top: 27px;
+}
+
+.p_senha {
+    font-size: x-large;
+    text-align: center;
+    margin-top: 27px;
+}
+
+.email {
+    font-family: 'IM Fell DW Pica', serif;
+    text-align: center;
+    margin-left: 104px;
+    border: white solid;
+    border-radius: 10px;
+    
+}
+
+.btn_login {
+    font-size: 18px;
+    font-family: 'IM Fell DW Pica', serif;
+    width: 150px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #b99982;
+    border: none;
+    cursor: pointer;
+    margin-top: 60px;
+    margin-left: 122px;
+    text-align: center;
+}
+
+.btn_cad {
+    font-size: 18px;
+    font-family: 'IM Fell DW Pica', serif;
+    width: 150px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #b99982;
+    border: none;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 122px;
+    text-align: center;
+}
+
+.bannerII {
+    background: hsla(1, 33%, 30%, 1);
+
+background: linear-gradient(180deg, hsla(1, 33%, 30%, 1) 0%, hsla(1, 36%, 53%, 1) 50%, hsla(1, 59%, 25%, 1) 100%);
+
+background: -moz-linear-gradient(180deg, hsla(1, 33%, 30%, 1) 0%, hsla(1, 36%, 53%, 1) 50%, hsla(1, 59%, 25%, 1) 100%);
+
+background: -webkit-linear-gradient(180deg, hsla(1, 33%, 30%, 1) 0%, hsla(1, 36%, 53%, 1) 50%, hsla(1, 59%, 25%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#653433", endColorstr="#B35D5C", GradientType=1 );
+    width: 100%;
+    height: 460px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.cardI {
+    width: 350px;
+    height: 350px;
+    background-color: #a8231c;
+}
+
+.cardII {
+    width: 350px;
+    height: 350px;
+    background-color: #a8231c;
+}
+
+.cardIII {
+    width: 350px;
+    height: 350px;
+    background-color: #a8231c;
+}
+
+.p_cards {
+    font-family:'IM Fell DW Pica', serif;
+    text-align: center;
+    font-size: x-large;
+    font-weight: 600;
+    margin-bottom: 0%;
+}
+
+.p_cards_sub {
+    margin-top: 5px;
+    font-family:'IM Fell DW Pica', serif;
+    text-align: center;
+    font-size: 25px;
+}
+
+.indicados {
+    font-family: 'IM Fell DW Pica', serif;
+    text-align: center;
+    font-size: 20px;
+    justify-content: center;
+}
+
+.playerII {
+    margin-left: 55px;
+    margin-top: 20px;
+}
+
+p {
+    margin-bottom: 10px;
+    color: white;
+}
+
+.button {
+    font-family: 'IM Fell DW Pica', serif;
+    font-size: 18px;
+    margin-top: 15px;
+    width: 150px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #b99982;
+    border: none;
+    cursor: pointer;
+}
+
+/* FIM DO BANNER */
+
+/* INICIO FOOTER */
+
+.footer {
+    width: 100%;
+    height: 75px;
+    background-color: #be9f88;
+}
+
+
+
+
+/* MELHOR ALBUM */
+
+.container_MA {
+    height: 580px;
+    width: 100%;
+    background-image: url(../capas/taylor_front.jpg);
+    background-size: cover;
+    background-position:center;
+}
+
+.blocoI {
+    width: 290px;
+    height: 350px;
+    justify-content: center;
+    align-items: center;
+    background-color: #a8231c86;
+}
+
+.playI {
+    margin-left: 19px;
+}
+
+.blocoII {
+    width: 290px;
+    height: 350px;
+    background-color: #a8231c86;
+}
+
+.blocoIII {
+    width: 290px;
+    height: 350px;
+    background-color: #a8231c86;
+}
+
+.blocoIV {
+    width: 290px;
+    height: 350px;
+    background-color: #a8231c86;
+}
+
+.imgI {
+    height: 150px;
+    position: center;
+    margin-left: 50px;
+}
+
+.p_red {
+    color: white;
+    text-align: center;
+    font-size: large;
+}
+
+.imgII {
+    height: 150px;
+    width: 150px;
+    position: center;
+    margin-left: 50px;
+}
+
+.imgIII {
+    height: 150px;
+    width: 150px;
+    position: center;
+    margin-left: 50px;
+}
+
+.imgIV {
+    height: 150px;
+    width: 150px;
+    position: center;
+    margin-left: 50px;
+}
+
+.button_ma {
+    font-family: 'IM Fell DW Pica', serif;
+    font-size: 18px;
+    width: 150px;
+    height: 35px;
+    border-radius: 10px;
+    color: white;
+    background-color: #b99982;
+    border: none;
+    cursor: pointer;
+    margin-left: 70px;
+    margin-top: 16px;
+}
+
+#green {
+    margin-left: 30px;
+}
+
+#red {
+    margin-left: 30px;
+}
+
+.tit_ma {
+    padding-top: 5px;
+    display: flex;
+    justify-content: center;
+    font-size: 70px;
+    height: auto;
+}
+
+.p_ma {
+    margin-top: 17px;
+}
+
+.blocos {
+    margin-top: -10px;
+    height: 470px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* MELHOR MÚSICA */
+
+.container_MM {
+    height: 580px;
+    width: 100%;
+    background-image: url(../capas/taylor_smile\(1\).jpg);
+    background-size: cover;
+    background-position: 40% 9%;
+}
+
+.p_mm {
+    margin-top: 17px;
+    color: white;
+}
+
+.p_msc {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+.player{
+    margin-top: 30px;
+    margin-left: 25px;
+}
+
+.squareI {
+    align-items: center;
+    width: 300px;
+    height: 350px;
+    justify-content: center;
+    background-color: #a8231c86;
+}
+
+.squareII {
+    width: 250px;
+    height: 350px;
+    justify-content: center;
+    background-color: #a8231c86;
+}
+
+.button_mm {
+    font-family: 'IM Fell DW Pica', serif;
+    font-size: 18px;
+    width: 150px;
+    height: 35px;
+    border-radius: 10px;
+    color: white;
+    background-color: #b99982;
+    border: none;
+    cursor: pointer;
+    margin-left: 74px;
+    margin-top: 72px;
+}
+
+/* DASHBOARD */
+
+.coluna {
+    height: 470px;
+    width: 351px;
+    background-color: #a8231c98;
+    margin-left: 100px;
+    border-radius: 82px;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner_dash {
+    display: flex;
+    height: 470px;
+    width: 100%;
+    background-image: url(../capas/red_cover.jpg);
+    background-position: 50% 34%;
+}
+
+
+.options {
+    color: white;
+    font-size: 30px;
+    margin-top: 10px;
+    padding-top: 15px;
+    margin-bottom: 0px;
+    text-align: center;
+    
+}
+
+.optionsII {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+.btn_dash {
+    margin-top: 80px;
+    width: 195px;
+    height: 40px;
+    margin-left: 77px;
+    border-radius: 10px;
+    background-color: #a8231c;
+    border: none;
+    color: white;
+    font-family: 'IM Fell DW Pica', serif;
+    font-size: 20px;
+}
+
+/* GRAFICO */
+
+.chart {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.404);
+    margin-left: 95px;
+    margin-top: 70px;
+    height: fit-content;
+}
+
+.chartII {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.404);
+    margin-left: 95px;
+    margin-top: 70px;
+    height: fit-content;
+}
+
+.pIII{
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+    list-style: none;
+}
+
+i{
+    cursor: pointer;
+}

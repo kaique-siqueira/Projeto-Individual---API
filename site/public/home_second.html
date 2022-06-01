@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TS Collection</title>
+    <link rel="stylesheet" type="text/css" href="layout.css" media="screen"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap" rel="stylesheet">
+    <link rel="icon" type="imagem/png" href="../public/capas/KS-ICON.png" />
+
+
+</head>
+<body>
+    
+    <div class="header">
+
+        <div class="container">
+           <a href="index.html"><img src="TS-Icon-Red.png" class="img"></a>
+
+        </div>
+
+        <div class="containerII">
+
+            <ul class="navbarII">
+                <a href="ma.html"><i><li style="color: white;">Melhor Album</li></i></a> &nbsp;&nbsp;&nbsp;
+               <a href="mm.html"><li style="color: white;">Melhor Música</li></i></a>
+            </ul>
+            
+
+        </div>
+        
+    </div>
+
+
+ <!-- FIM DA HEADER -->
+
+    <div class="banner">
+        <div id="aviso" class="aviso"><p id="p_aviso"></p></div>
+    </div>
+
+    <div class="bannerII">
+
+        <div class="popup" id="popup">
+            <a href="javascript: fechar();"><div class="x">X</div></a>
+
+            <p class="p_login">Bem vindo ao TS Collection!</p>
+
+
+            <p class="p_email">Email</p>  
+            <input type="email" class="email" placeholder="Email" id="in_email">
+
+            <p class="p_senha">Senha</p>  
+            <input type="password" class="email" placeholder="Senha" id="in_senha">
+            
+            <button class="btn_login" id="btn_login">Entrar</button>    
+            
+            
+            <p class="pIII">É novo aqui? <i onclick="abrirII()">Faça seu cadastro!</i></p>
+
+        </div>
+
+
+        <div class="popupII" id="popupII">
+            <a href="javascript: fecharII();"><div class="x">X</div></a>
+
+            <p class="p_cad">Faça parte do TS Collection!</p>
+
+            <p class="p_email">Nome</p>  
+            <input type="text" class="email" placeholder="Nome Completo" id="in_nome">
+
+            <p class="p_email">Email</p>  
+            <input type="email" class="email" placeholder="Email" id="in_emailII">
+
+            <p class="p_senha">Senha</p>  
+            <input type="password" class="email" placeholder="Senha" id="in_senhaII">
+
+            <p class="p_senha">Confirmar senha</p>  
+            <input type="password" class="email" placeholder="Senha">
+            
+
+            <div id="captcha" class="captcha"> <p id="valorI" class="valores">1</p> &nbsp;&nbsp;&nbsp; <p class="valores">+</p> &nbsp;&nbsp;&nbsp; <p id="valorII" class="valores">1</p> &nbsp;&nbsp;&nbsp; <p class="valores">=</p> &nbsp;&nbsp;&nbsp;
+                <input type="number" id="in_resultado" class="in_cap" placeholder="Resposta"></div>
+
+            <button class="btn_cad" onclick="validar()">Cadastrar</button>
+        </div>
+
+        
+
+        <div class="cardI">
+            <i><p class="p_cards">MELHOR ALBUM</p></i>
+             <i><p class="p_cards_sub">Indicados:</p></i>  
+             <div class="indicados">
+                <p>Red (Taylor's Version)</p>
+                <p>Fearless (Taylor's Version)</p>
+                <p>evermore</p>
+                <p>folklore</p>
+              <a href="ma.html"><button class="button">Vote Agora!</button></a>
+            </div>
+        </div>
+
+        <div class="cardII">
+            <i><p class="p_cards">MELHOR MÚSICA</p></i>
+            <i><p class="p_cards_sub">Indicados:</p></i>
+            <div class="indicados">
+                <p>All Too Well (10 Minutes Version)</p>
+                <p>Love Story (Taylor's Version)</p>
+                <p>willow</p>
+                <p>cardigan</p>
+                <a href="mm.html"><button class="button">Vote Agora!</button></a>
+            </div>
+                
+        </div>
+            
+        <div class="cardIII">
+            <i><p class="p_cards">MÚSCIAS POPULARES</p></i>
+            <iframe class="playerII" style="border-radius:12px" src="https://open.spotify.com/embed/artist/06HL4z0CvFAxyc27GXpf02?utm_source=generator" width="250px" height="250" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+
+    </div>
+
+    <div class="footer"></div>
+</body>
+</html>
+
+<script type="text/javascript">
+    function abrir(){
+        document.getElementById('popup').style.display = 'block';
+        document.getElementById('popupII').style.display =  'none';
+    }
+    function abrirII(){
+        document.getElementById('popupII').style.display = 'block';
+        document.getElementById('popup').style.display =  'none';
+    }
+    function fechar(){
+		document.getElementById('popup').style.display =  'none';
+			}
+    function fecharII(){
+		document.getElementById('popupII').style.display =  'none';
+			}
+</script>
+
+<script>
+    var contagem = 0
+    valor1 = parseInt(Math.random() * 10) +1
+    valor2 = parseInt(Math.random() * 10) +1
+
+    valorI.innerHTML = valor1
+    valorII.innerHTML = valor2
+    
+    
+
+    function validar() {
+        p_aviso.innerHTML = ''
+        var valor_soma = valor1 + valor2
+        var resposta = Number (in_resultado.value)
+        var email = in_email.value
+        var senha = Number (in_senha.value)
+        var texto = `Campo de email e senha vazios! <br><br>`
+        var textoII = `Tente novamente em 10 segundos <br><br>`
+
+        if (valor_soma == resposta) {
+            alert(`Resposta correta!`)
+           /* window.location.href = "dashboard.html" */
+        }
+
+        if (valor_soma != resposta) {
+            alert (`Resporta errada!`)
+            contagem++
+        }
+
+        if (contagem == 3) {
+            aviso.style.display = 'block'
+            setTimeout(()=>{(aviso.style.display = 'none')},7000);
+            btn_login.style.display = 'none'
+            setTimeout(()=>{(btn_login.style.display = 'block')},10000);
+            p_aviso.innerHTML += textoII
+            contagem = 0
+            
+        }
+
+        if (email == "" || senha == "") {
+            aviso.style.display = 'block'
+            setTimeout(()=>{(aviso.style.display = 'none')},7000);
+            p_aviso.innerHTML += texto
+        }
+
+    }
+    
+
+</script>
