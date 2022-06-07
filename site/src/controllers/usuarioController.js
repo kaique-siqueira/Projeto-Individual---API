@@ -95,14 +95,48 @@ function cadastrar(req, res) {
 }
 
 function enviar_ma (req, res) {
-    var voto = req.body.votoSever
+    var voto = req.body.votoServer
+    var id = req.body.idServer
 
     if (voto == undefined) {
-        res.status(400).send("Seu nome está undefined!");
+        res.status(400).send("Seu voto está undefined!");
+    } else if (id == undefined) {
+        res.status(400).send("Seu id está undefined!");
     }
+
     else {
 
-    usuarioModel.enviar_ma(voto)
+    usuarioModel.enviar_ma(voto,id)
+    .then(
+        function (resultado) {
+            res.json(resultado);
+        }
+    ).catch(
+        function (erro) {
+            console.log(erro);
+            console.log(
+                "\nHouve um erro ao realizar o cadastro! Erro: ",
+                erro.sqlMessage
+            );
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}
+}
+
+function enviar_mm (req, res) {
+    var votoII = req.body.votoServerII
+    var id = req.body.idServer
+
+    if (votoII == undefined) {
+        res.status(400).send("Seu voto está undefined!");
+    } else if (id == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    }
+
+    else {
+
+    usuarioModel.enviar_mm(votoII,id)
     .then(
         function (resultado) {
             res.json(resultado);
@@ -125,5 +159,6 @@ module.exports = {
     cadastrar,
     listar,
     testar,
-    enviar_ma
+    enviar_ma,
+    enviar_mm
 }

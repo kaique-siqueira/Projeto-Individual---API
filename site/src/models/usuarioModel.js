@@ -31,17 +31,27 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucao);
 }
 
-function enviar_ma(voto) {
+function enviar_ma(voto,id) {
     var instrucao = `
-    INSERT INTO VotosAlbum (fkAlbum) VALUES ('${voto}');
+    INSERT INTO VotosAlbum VALUES ('${id}','${voto}');
 `;
 console.log("Executando a instrução SQL: \n" + instrucao);
 return database.executar(instrucao);
 }
 
+function enviar_mm(votoII, id) {
+    console.log("USUARIO MODEL")
+    var instrucao = `
+    INSERT INTO VotosMusica VALUES ('${id}', '${votoII}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+};
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    enviar_ma
+    enviar_ma,
+    enviar_mm
 };

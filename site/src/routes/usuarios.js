@@ -23,6 +23,10 @@ router.post("/autenticar", function (req, res) {
 
 router.post("/enviar_ma", function (req, res) {
     usuarioController.enviar_ma(req, res);
+});
+
+router.post("/enviar_mm", function (req, res) {
+    usuarioController.enviar_mm(req, res);
 })
 
 module.exports = router;

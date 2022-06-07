@@ -16,7 +16,7 @@
     <div class="header">
 
         <div class="container">
-           <a href="home.html"><img src="TS-Icon-Red.png" class="img"></a>
+           <a href="home_second.html"><img src="TS-Icon-Red.png" class="img"></a>
 
         </div>
 
@@ -67,7 +67,9 @@
 
 
 
-    <div class="footer"></div>
+    <div class="footer">
+      <button onclick="obterDadosGrafico()">obterdado</button>
+    </div>
 
 </body>
 </html>
@@ -75,11 +77,11 @@
 <script>
 
     const labels = [
-      '1ª semana',
-      '2ª semana',
-      '3ª semana',
-      '4ª semana',
-      '5ª semana',
+      'Votos por Álbum',
+    ];
+
+    const labelsII = [
+      'Votos por Música',
     ];
   
     const data = {
@@ -88,53 +90,53 @@
         label: 'Red TV', 
         backgroundColor: 'rgb(168 35 28)',
         borderColor: 'rgb(168 35 28)',
-        data: [20, 10, 5, 2, 20, 30],
+        data: [20],
       },
       {
         label: 'Fearless', 
         backgroundColor: 'rgb(142 104 54)',
         borderColor: 'rgb(142 104 54)',
-        data: [10, 10, 5, 2, 20, 30],
+        data: [10],
       },
       {
         label: 'evermore', 
         backgroundColor: 'rgb(227 121 56)',
         borderColor: 'rgb(227 121 56)',
-        data: [5, 10, 5, 2, 20, 30],
+        data: [5],
       },
       {
         label: 'folklore', 
         backgroundColor: 'rgb(76 76 76)',
         borderColor: 'rgb(76 76 76)',
-        data: [5, 10, 5, 2, 20, 30],
+        data: [15],
         
       }] };
 
       const dataII = {
-      labels: labels,
+      labels: labelsII,
       datasets: [{
         label: 'All Too Well', 
         backgroundColor: 'rgb(168 35 28)',
         borderColor: 'rgb(168 35 28)',
-        data: [50, 10, 5, 2, 20, 30],
+        data: [20],
       },
       {
         label: 'Love Story', 
         backgroundColor: 'rgb(142 104 54)',
         borderColor: 'rgb(142 104 54)',
-        data: [10, 10, 5, 2, 20, 30],
+        data: [10],
       },
       {
         label: 'willow', 
         backgroundColor: 'rgb(227 121 56)',
         borderColor: 'rgb(227 121 56)',
-        data: [5, 10, 5, 2, 20, 30],
+        data: [5],
       },
       {
         label: 'cardigan', 
         backgroundColor: 'rgb(76 76 76)',
         borderColor: 'rgb(76 76 76)',
-        data: [5, 10, 5, 2, 20, 30],
+        data: [3],
         
       }] };
   
@@ -161,20 +163,9 @@
       document.getElementById('myChartII'),
       configII
     );
+
+
+
+    
   </script>
 
-
-
-
-<script>
-   function melhor_musica() {
-    document.getElementById('chart_mm').style.display = 'block';
-        document.getElementById('chart_ma').style.display =  'none';
-   }
-
-   function melhor_album() {
-    document.getElementById('chart_ma').style.display = 'block';
-        document.getElementById('chart_mm').style.display =  'none';
-    
-   }
-</script>

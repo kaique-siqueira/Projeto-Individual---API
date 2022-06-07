@@ -70,7 +70,7 @@
 
 
         </div>
-        <button class="ma_votos">Enviar Votos</button>
+        <button class="ma_votos" onclick="enviar_mm()">Enviar Voto</button>
     </div>
 
     <div class="footer"></div>
@@ -79,28 +79,64 @@
 </html>
 
 <script>
-    var atw = 0
-    var ls = 0
-    var willow = 0
-    var cardigan = 0
+
+    var votoII
 
     function votar_atw() {
        
-       atw++
+    votoII = 10
     }
 
     function votar_ls() {
-        ls++ 
+    
+        votoII = 11
         
     }
 
     function votar_willow() {
-        willow++ 
+        
+        votoII = 12
         
     }
 
     function votar_cardigan() {
-        cardigan++ 
        
+        votoII = 13
+       
+    }
+
+
+    function enviar_mm() {
+        votoVarII = votoII;
+        idVar = sessionStorage.ID_USUARIO;
+        // Enviando o valor da nova input
+        fetch("/usuarios/enviar_mm", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                votoServerII: votoVarII,
+                idServer: idVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                
+                console.log("O cadastro de melhor musica deu certo !!!!")
+                
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+
     }
 </script>

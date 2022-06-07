@@ -77,7 +77,7 @@
     <!-- FOOTHER -->
     <div class="footer" id="barra">
 
-        <input type="text" id="in_voto">
+    
         
     </div>
 </body>
@@ -85,36 +85,31 @@
 
 <script>
 
-    var voto = []
+    var voto
 
     function votar_red() {
-       voto.push("red")
+       voto = 1
     }
 
     function votar_fearless() {
-        voto.push("fearless")
+        voto = 2
     }
 
     function votar_ever() {
-        voto.push("evermore")
+        voto = 3
         
     }
 
     function votar_folk() {
-        voto.push("folklore")
+        voto = 4
        
     }
 
     function enviar_ma() {
-
-        if (voto.length >= 2) {
-            alert(`Apenas um voto por usuário`)
-            pop(voto)
-            return
-        }
-        else {
-           
-            fetch("/usuarios/enviar_ma", {
+        votoVar = voto;
+        idVar = sessionStorage.ID_USUARIO;
+        // Enviando o valor da nova input
+        fetch("/usuarios/enviar_ma", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -122,12 +117,28 @@
             body: JSON.stringify({
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
-                votoServer: voto,
+                votoServer: votoVar,
+                idServer: idVar
             })
-        })
-           
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                
+                console.log("O cadastro de melhor album deu certo !!!!")
+                
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+
     }
 
-}
+
     
 </script>
