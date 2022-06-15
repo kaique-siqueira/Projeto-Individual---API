@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap" rel="stylesheet">
-    <link rel="icon" type="imagem/png" href="../public/capas/KS-ICON.png" />
+    <link rel="icon" type="imagem/png" href="../KS-ICON.png" />
 
 </head>
 <body>
@@ -126,10 +126,13 @@
 
             if (resposta.ok) {
                 
+                alert(`Voto computado!`)
+
                 console.log("O cadastro de melhor album deu certo !!!!")
                 
             } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
+               // throw ("Houve um erro ao tentar enviar o voto!");
+                alert(`Ouve um erro ao enviar seu voto!`)
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);

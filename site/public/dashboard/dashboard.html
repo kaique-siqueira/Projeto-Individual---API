@@ -2,11 +2,11 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../KS-ICON.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcquaTec | Dashboards</title>
+    <title>TS Collection | Dashboards</title>
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="dashboards.css">
@@ -26,7 +26,7 @@
 
     <div class="janela">
         <div class="header-left">
-            <h1>AcquaTec</h1>
+            <img src="../TS-Icon-Red.png" style="margin-top: 30px; width: 60%;">
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
@@ -34,7 +34,7 @@
 
             <div class="btn-nav-white">
                 <a href="./cards.html">
-                    <h3>Aquários</h3>
+                    <h3>Quizz</h3>
                 </a>
             </div>
 
@@ -44,11 +44,6 @@
 
             </div>
 
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
-                </a>
-            </div>
 
             <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
@@ -59,16 +54,16 @@
         <div class="dash">
             <div class="btns-dash">
                 <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-                <button class="btn-chart btn-pink" onclick="obterDadosGrafico(1)">Aquario 1</button>
-                <button class="btn-chart btn-white" onclick="obterDadosGraficoII()">Aquario 2</button>
+                <button class="btn-chart btn-pink" onclick="obterDadosGrafico(1)">Melhor Álbum</button>
+                <button class="btn-chart btn-white" onclick="obterDadosGraficoII()">Melhor Música</button>
             </div>
             <div>
-                <h3 class="tituloGraficos">
-                    <span id="tituloAquario">123</span>
-                </h3>
+                <h2 class="tituloGraficos">
+                    <span id="tituloAquario"></span>
+                </h2>
             </div>
             <div class="graph">
-                <canvas id="canvas_grafico"></canvas>
+                <canvas id="canvas_grafico" style="background-color: rgba(0, 0, 0, 0.377);" ></canvas>
             </div>
         </div>
     </div>
@@ -88,10 +83,6 @@
 
     /*verificar_autenticacao();*/
 
-    function alterarTitulo(idAquario) {
-        var tituloAquario = document.getElementById("tituloAquario")
-        tituloAquario.innerHTML = "Últimas medidas de Temperatura e Umidade do <span style='color: #e6005a'>Aquário " + idAquario + "</span>"
-    }
 
 
 
@@ -107,6 +98,9 @@
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
     function obterDadosGrafico(idAquario) {
+
+        tituloAquario.innerHTML = "Melhor Álbum"
+
 
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
@@ -133,6 +127,8 @@
 
 
     function obterDadosGraficoII() {
+
+        tituloAquario.innerHTML = "Melhor Música"
 
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
@@ -167,8 +163,8 @@
             datasets: [
                 {
                     yAxisID: 'y-umidade',
-                    borderColor: '#32B9CD',
-                    backgroundColor: '#32b9cd8f',
+                    borderColor: '#000000',
+                    backgroundColor: ['#b8b8b8', '#994914', '#a68249', '#650604'],
                     fill: true,
                     data: []
                 },
@@ -241,8 +237,8 @@
             datasets: [
                 {
                     yAxisID: 'y-umidade',
-                    borderColor: '#32B9CD',
-                    backgroundColor: '#32b9cd8f',
+                    borderColor: '#000000',
+                    backgroundColor: ['#b8b8b8', '#994914', '#a68249', '#650604'],
                     fill: true,
                     data: []
                 },

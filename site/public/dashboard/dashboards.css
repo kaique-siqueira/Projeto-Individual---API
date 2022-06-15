@@ -106,7 +106,7 @@ body {
 /* pagina graficos */
 
 .dash-header {
-  background-color: #212124;
+  background-color: #b99982;
 }
 
 .dash {
@@ -114,7 +114,9 @@ body {
   position: relative;
   top: 0;
   left: 25%;
-  background-color: #161618;
+  background-image: url(../capas/tay-dash.jpg);
+  background-size: cover;
+  background-position: top;
 
   /* width: 75%;
     display: flex;
@@ -124,6 +126,16 @@ body {
     justify-content: space-around;*/
   height: 100vh;
 }
+
+.dashII {
+  width: 75%;
+  position: relative;
+  top: 0;
+  left: 25%;
+  background-color: #b99982;
+  height: 100vh; 
+}
+
 
 .regua {
   display: flex;
@@ -239,8 +251,78 @@ body {
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
-  color: #e6005a;
-  background-color: white;
+  color: white;
+  background-color: #650604;
   margin: 5px;
   border-radius: 3px;
+}
+
+
+/* quizz */ 
+
+.ask_quizz{ 
+  color: #650604;
+  font-size: x-large;
+  margin-left: 35px;
+  font-weight: bolder;
+}
+
+.aws_quizz {
+  color: white;
+  font-size: larger;
+  margin-left: 35px;
+}
+
+.in_aws {
+  font-size: large;
+  text-align: left;
+  width: 400px;
+  margin-left: 35px;
+  border-radius: 0%;
+  border: none;
+  border-bottom: #650604 solid 2px;
+  box-shadow: none;
+  outline: 0;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 0%;
+  padding-left: 5px;
+}
+
+.img_dash {
+  width: 450px;
+  margin-left: 35px;
+}
+
+.div_resposta {
+  background-color: rgba(245, 222, 179, 0);
+  width: 450px;
+  height: 180px;
+  display: flex;
+  position: absolute;
+  margin-left: 542px;
+  margin-top: -50px;
+}
+
+.div_respostaII {
+  background-color: rgba(255, 0, 0, 0);
+  width: 450px;
+  height: 210px;
+  display: flex;
+  position: absolute;
+  margin-left: 542px;
+  margin-top: -270px;
+}
+
+.gif {
+  color: #650604;
+  font-size: x-large;
+  margin-left: 35px;
+  font-weight: bolder;
+}
+
+.gifII {
+  color: #650604;
+  font-size: x-large;
+  margin-left: 35px;
+  font-weight: bolder;
 }

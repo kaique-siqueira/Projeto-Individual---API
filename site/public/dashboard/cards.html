@@ -2,11 +2,11 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../KS-ICON.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcquaTec | Tempo Real</title>
+    <title>TS Collection</title>
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="dashboards.css">
@@ -25,14 +25,14 @@
 
         <div class="header-left dash-header">
 
-            <h1>AcquaTec</h1>
+ <a href="../home_second.html"><img src="../TS-Icon-Red.png" style="margin-top: 30px; width: 60%; margin-left: 65px;"></a> 
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
             </div>
 
             <div class="btn-nav">
-                <h3>Aquários</h3>
+                <h3>Quizz</h3>
             </div>
 
             <div class="btn-nav-white">
@@ -41,11 +41,6 @@
                 </a>
             </div>
 
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
-                </a>
-            </div>
 
             <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
@@ -53,168 +48,89 @@
 
         </div>
 
-        <div class="dash">
-            <div class="regua">
-                <div class="item-regua perigo-frio">
-                    <h4>Perigo</h4>
-                    <h2>0°C</h2>
-                </div>
-                <div class="item-regua alerta-frio">
-                    <h4>Alerta</h4>
-                    <h2>0°C</h2>
-                </div>
-                <div class="item-regua ideal">
-                    <h4>Ideal</h4>
-                    <h2>0°C</h2>
-                </div>
-                <div class="item-regua alerta-quente">
-                    <h4>Alerta</h4>
-                    <h2>0°C</h2>
-                </div>
-                <div class="item-regua perigo-quente">
-                    <h4>Perigo</h4>
-                    <h2>0°C</h2>
-                </div>
-            </div>
+        <div class="dashII">
+            <p class="ask_quizz">De qual música é este trecho abaixo?</p>        
+            
+            <div class="div_resposta">
 
-            <div class="cards">
-                <div class="card">
-                    <h1>Aquário 1</h1>
-                    <div class="temperatura">
-                        <p id="temp_aquario_1">-°C</p>
-                    </div>
-                    <div class="cor-alerta" id="card_1"></div>
-                </div>
-                <div class="card">
-                    <h1>Aquário 1</h1>
-                    <div class="temperatura">
-                        <p id="temp_aquario_2">-°C</p>
-                    </div>
-                    <div class="cor-alerta" id="card_2"></div>
-
-                </div>
-                <div class="card">
-                    <h1>Aquário 1</h1>
-                    <div class="temperatura">
-                        <p id="temp_aquario_3">-°C</p>
-                    </div>
-                    <div class="cor-alerta ideal" id="card_3"></div>
-                </div>
-                <div class="card">
-                    <h1>Aquário 1</h1>
-                    <div class="temperatura">
-                        <p id="temp_aquario_4">-°C</p>
-                    </div>
-                    <div class="cor-alerta" id="card_4"></div>
-                </div>
+                <img id="imgI" src=""> <br>
+                <p class="gif" id="p_gifI"></p>
+                
 
             </div>
+
+
+            <p class="aws_quizz">This night is flawless, don't you let it go <br>
+                I'm wonderstruck, dancing around all alone <br>
+                I'll spend forever wondering if you knew <br>
+                I was enchanted to meet you</p>
+            
+            <input class="in_aws" onkeyup="avaliar()" id="in_respI">
+        
+        
+            <p class="ask_quizz">Olhando o frame abaixo, adivinhe o clipe!</p>   
+
+            <img class="img_dash" src="../capas/wild.jpg" alt=""> <br> <br> 
+            
+
+
+
+
+            <div class="div_respostaII">
+
+                <img src="" alt="" id="imgII">
+                <p class="gifII" id="p_gifII" ></p>
+
+            </div>
+
+
+            
+            <input class="in_aws" onkeyup="avaliarII()" id="in_respII">
+
+
+
 
         </div>
-    </div>
 
 
 </body>
 
-<script>
-
-    function atualizacaoPeriodica() {
-        obterdados(1);
-        obterdados(2);
-        obterdados(3);
-        obterdados(4);
-
-        function sendData() {
-			var http = new XMLHttpRequest();
-			http.open('POST', 'http://localhost:3000/api/sendData', false);
-			http.send(null);
-		}
-
-        setInterval(() => {
-			sendData();
-		}, 2000);
-        setTimeout(atualizacaoPeriodica, 5000);
-    }
-
-    function obterdados(idAquario) {
-        fetch(`/medidas/tempo-real/${idAquario}`)
-            .then(resposta => {
-
-                if (resposta.ok) {
-                    resposta.json().then(resposta => {
-
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-                        var dados = {
-                            temperatura: resposta[0].temperatura,
-                        }
-
-                        alertar(resposta[0].temperatura, idAquario);
-                    });
-                } else {
-
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
-            });
-
-    }
-
-    function alertar(temperatura, idAquario) {
-        var limites = {
-            muito_quente: 23,
-            quente: 22,
-            ideal: 20,
-            frio: 10,
-            muito_frio: 5
-        };
-
-        var classe_temperatura = 'cor-alerta';
-
-        if (temperatura >= limites.muito_quente) {
-            classe_temperatura = 'cor-alerta perigo-quente';
-            console.log("caiu no 1")
-        }
-        else if (temperatura < limites.muito_quente && temperatura >= limites.quente) {
-            classe_temperatura = 'cor-alerta alerta-quente';
-            console.log("caiu no 2")
-        }
-        else if (temperatura < limites.quente && temperatura > limites.frio) {
-            classe_temperatura = 'cor-alerta ideal';
-            console.log("caiu no 3")
-        }
-        else if (temperatura <= limites.frio && temperatura > limites.muito_frio) {
-            classe_temperatura = 'cor-alerta alerta-frio';
-            console.log("caiu no 4")
-        }
-        else if (temperatura < limites.min_temperatura) {
-            classe_temperatura = 'cor-alerta perigo-frio';
-            console.log("caiu no 5")
-        }
-
-        var card;
-
-        if (idAquario == 1) {
-            temp_aquario_1.innerHTML = temperatura + "°C";
-            card = card_1
-        } else if (idAquario == 2) {
-            temp_aquario_2.innerHTML = temperatura + "°C";
-            card = card_2
-        } else if (idAquario == 3) {
-            temp_aquario_3.innerHTML = temperatura + "°C";
-            card = card_3
-        } else if (idAquario == 4) {
-            temp_aquario_4.innerHTML = temperatura + "°C";
-            card = card_4
-        }
-
-        // alterando
-        card.className = classe_temperatura;
-
-    }
-
-</script>
 
 </html>
+
+<script>
+
+function avaliar() {
+
+var respostaI = in_respI.value
+
+
+
+
+if (respostaI != "Enchanted") {
+    imgI.src = `https://media.giphy.com/media/l1LbVCecXRbaLGi0o/giphy.gif`
+    p_gifI.innerHTML = `Tenta denovo, vai!`
+
+} else {
+    imgI.src = `https://media.giphy.com/media/u23zXEvNsIbfO/giphy.gif`
+    p_gifI.innerHTML = `Aí sim!`
+}
+}
+
+function avaliarII() {
+
+    var respostaII = in_respII.value
+
+if (respostaII != "Wildest Dreams") {
+    imgII.src = `https://media.giphy.com/media/1DfdCZ4X6eDCw/giphy.gif`
+    p_gifII.innerHTML = `Quase lá...`
+
+} else {
+    imgII.src = `https://media.giphy.com/media/kcTwmeYLGDrgzhVaVz/giphy.gif`
+    p_gifII.innerHTML = `Isso aí!`
+}
+
+}
+
+
+</script>

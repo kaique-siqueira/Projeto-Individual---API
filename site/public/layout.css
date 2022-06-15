@@ -300,6 +300,19 @@ p {
     cursor: pointer;
 }
 
+.buttonI {
+    font-family: 'IM Fell DW Pica', serif;
+    font-size: 18px;
+    margin-top: 67px;
+    margin-left: 100px;
+    width: 150px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #b99982;
+    border: none;
+    cursor: pointer;
+}
+
 /* FIM DO BANNER */
 
 /* INICIO FOOTER */
